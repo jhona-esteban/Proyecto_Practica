@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroReserva - Panel Principal</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="toast.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <ion-icon name="airplane"></ion-icon>
+            <h1>AeroReserva</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="search-flights.html" class="active">Consultar Vuelos</a></li>
+                <li><a href="reservations.html">Mis Reservas</a></li>
+                <li><a href="purchases.html">Mis Compras</a></li>
+                <li><a href="profile.html">Mi Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <span id="user-name">Usuario</span>
+            <button id="logout-btn">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard-welcome">
+            <h2>Bienvenido a AeroReserva</h2>
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <h3>Buscar Vuelos</h3>
+                    <p>Encuentra los mejores vuelos a los destinos que deseas visitar.</p>
+                    <a href="search-flights.html" class="btn primary-btn">Buscar Ahora</a>
+                </div>
+                <div class="dashboard-card">
+                    <ion-icon name="bookmark-outline"></ion-icon>
+                    <h3>Mis Reservas</h3>
+                    <p>Gestiona tus reservas actuales y revisa los detalles.</p>
+                    <a href="reservations.html" class="btn primary-btn">Ver Reservas</a>
+                </div>
+                <div class="dashboard-card">
+                    <ion-icon name="card-outline"></ion-icon>
+                    <h3>Mis Compras</h3>
+                    <p>Revisa el historial de tus compras y billetes.</p>
+                    <a href="purchases.html" class="btn primary-btn">Ver Compras</a>
+                </div>
+                <div class="dashboard-card">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <h3>Mi Perfil</h3>
+                    <p>Actualiza tu información personal y preferencias.</p>
+                    <a href="profile.html" class="btn primary-btn">Editar Perfil</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-offers">
+            <h2>Ofertas Destacadas</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FydGFnZW5hJTIwJTIwJTIwY29sb21iaWF8ZW58MHx8MHx8fDA%3D" alt="Oferta a Cartagena">
+                        <span class="offer-tag">-30%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Cartagena</h3>
+                        <p>Disfruta de las playas y la historia colonial</p>
+                        <div class="offer-price">
+                            <span class="original-price">$450.000</span>
+                            <span class="discount-price">$315.000</span>
+                        </div>
+                        <a href="search-flights.html?destination=Medellín" class="btn primary-btn">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/cnne-1237032-03-time-out-worlds-best-cities-2022-medellin.jpg?c=original" alt="Oferta a Medellín">
+                        <span class="offer-tag">-25%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Medellín</h3>
+                        <p>La ciudad de la eterna primavera te espera</p>
+                        <div class="offer-price">
+                            <span class="original-price">$320.000</span>
+                            <span class="discount-price">$240.000</span>
+                        </div>
+                        <a href="search-flights.html?destination=Medellín" class="btn primary-btn">Ver Oferta</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://t4.ftcdn.net/jpg/02/38/09/39/360_F_238093946_0T1s90e2drQSPGQt9EmHMPzHbT2QVGjM.jpg" alt="Oferta a Cali">
+                        <span class="offer-tag">-20%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Cali</h3>
+                        <p>Capital de la salsa y la alegría</p>
+                        <div class="offer-price">
+                            <span class="original-price">$280.000</span>
+                            <span class="discount-price">$224.000</span>
+                        </div>
+                        <a href="search-flights.html?destination=Cali" class="btn primary-btn">Ver Oferta</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cyfPIPDna9M?si=99STidbm9x-rZP8E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen controls style="display: block; margin: 10px auto;"></iframe>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AeroReserva</h3>
+                <p>Tu mejor opción para viajar por Colombia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="search-flights.html">Buscar Vuelos</a></li>
+                    <li><a href="reservations.html">Mis Reservas</a></li>
+                    <li><a href="purchases.html">Mis Compras</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@aeroreserva.com</p>
+                <p>Teléfono: +57 1 234 5678</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AeroReserva. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="common.js"></script>
+    <script src="dashboard.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

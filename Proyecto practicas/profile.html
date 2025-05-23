@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroReserva - Mi Perfil</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="toast.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <ion-icon name="airplane"></ion-icon>
+            <h1>AeroReserva</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="search-flights.html">Consultar Vuelos</a></li>
+                <li><a href="reservations.html">Mis Reservas</a></li>
+                <li><a href="purchases.html">Mis Compras</a></li>
+                <li><a href="profile.html" class="active">Mi Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <span id="user-name">Usuario</span>
+            <button id="logout-btn">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="profile-section">
+            <h2>Mi Perfil</h2>
+            
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="profile-avatar">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                    <h3 id="profile-name">Nombre del Usuario</h3>
+                    <ul class="profile-menu">
+                        <li class="active" data-tab="personal-info">Información Personal</li>
+                        <li data-tab="payment-methods">Métodos de Pago</li>
+                        <li data-tab="preferences">Preferencias</li>
+                        <li data-tab="account-settings">Configuración de Cuenta</li>
+                    </ul>
+                </div>
+                
+                <div class="profile-content">
+                    <!-- Información Personal -->
+                    <div id="personal-info" class="profile-tab active">
+                        <h3>Información Personal</h3>
+                        <form id="personal-info-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-full-name">Nombre Completo</label>
+                                    <input type="text" id="profile-full-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-email">Correo Electrónico</label>
+                                    <input type="email" id="profile-email" required readonly>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-phone">Teléfono</label>
+                                    <input type="tel" id="profile-phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-birthdate">Fecha de Nacimiento</label>
+                                    <input type="date" id="profile-birthdate">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-address">Dirección</label>
+                                <textarea id="profile-address" rows="3"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn primary-btn">Guardar Cambios</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Métodos de Pago -->
+                    <div id="payment-methods" class="profile-tab">
+                        <h3>Métodos de Pago</h3>
+                        <div class="payment-methods-list">
+                            <div class="payment-method-card">
+                                <div class="payment-method-icon">
+                                    <ion-icon name="card-outline"></ion-icon>
+                                </div>
+                                <div class="payment-method-details">
+                                    <h4>Tarjeta de Crédito</h4>
+                                    <p id="profile-card">**** **** **** 1234</p>
+                                </div>
+                                <button id="update-card-btn" class="btn small-btn">Actualizar</button>
+                            </div>
+                            <button id="add-payment-method-btn" class="btn secondary-btn">Agregar Método de Pago</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Preferencias -->
+                    <div id="preferences" class="profile-tab">
+                        <h3>Preferencias</h3>
+                        <form id="preferences-form">
+                            <div class="form-group">
+                                <label>Preferencia de Asiento</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="seat-preference" value="window"> Ventana
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="seat-preference" value="aisle"> Pasillo
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="seat-preference" value="no-preference" checked> Sin Preferencia
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Clase Preferida</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="class-preference" value="economy" checked> Económica
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="class-preference" value="business"> Ejecutiva
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="class-preference" value="first"> Primera
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="email-notifications" checked> Recibir notificaciones por correo
+                                </label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="special-offers" checked> Recibir ofertas especiales
+                                </label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn primary-btn">Guardar Preferencias</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Configuración de Cuenta -->
+                    <div id="account-settings" class="profile-tab">
+                        <h3>Configuración de Cuenta</h3>
+                        <form id="change-password-form">
+                            <h4>Cambiar Contraseña</h4>
+                            <div class="form-group">
+                                <label for="current-password">Contraseña Actual</label>
+                                <input type="password" id="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">Nueva Contraseña</label>
+                                <input type="password" id="new-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirmar Contraseña</label>
+                                <input type="password" id="confirm-password" required>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn primary-btn">Cambiar Contraseña</button>
+                            </div>
+                        </form>
+                        <div class="danger-zone">
+                            <h4>Zona de Peligro</h4>
+                            <p>Las siguientes acciones son irreversibles. Proceda con precaución.</p>
+                            <button id="delete-account-btn" class="btn danger-btn">Eliminar Cuenta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AeroReserva</h3>
+                <p>Tu mejor opción para viajar por Colombia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="search-flights.html">Buscar Vuelos</a></li>
+                    <li><a href="reservations.html">Mis Reservas</a></li>
+                    <li><a href="purchases.html">Mis Compras</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@aeroreserva.com</p>
+                <p>Teléfono: +57 1 234 5678</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AeroReserva. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para actualizar tarjeta -->
+    <div id="card-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Actualizar Tarjeta de Crédito</h3>
+            <form id="card-form">
+                <div class="form-group">
+                    <label for="update-card-number">Número de Tarjeta</label>
+                    <input type="text" id="update-card-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="update-card-expiry">Fecha de Expiración</label>
+                        <input type="text" id="update-card-expiry" placeholder="MM/AA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-card-cvv">CVV</label>
+                        <input type="text" id="update-card-cvv" placeholder="123" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="update-card-name">Nombre en la Tarjeta</label>
+                    <input type="text" id="update-card-name" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary-btn">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para confirmar eliminación de cuenta -->
+    <div id="delete-account-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Eliminar Cuenta</h3>
+            <p>¿Está seguro de que desea eliminar su cuenta? Esta acción no se puede deshacer y perderá todos sus datos, reservas y compras.</p>
+            <form id="delete-account-form">
+                <div class="form-group">
+                    <label for="delete-password">Ingrese su contraseña para confirmar</label>
+                    <input type="password" id="delete-password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn danger-btn">Eliminar Cuenta Permanentemente</button>
+                    <button type="button" id="cancel-delete-btn" class="btn secondary-btn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="common.js"></script>
+    <script src="profile.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroReserva - Mis Compras</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="toast.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <ion-icon name="airplane"></ion-icon>
+            <h1>AeroReserva</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="search-flights.html">Consultar Vuelos</a></li>
+                <li><a href="reservations.html">Mis Reservas</a></li>
+                <li><a href="purchases.html" class="active">Mis Compras</a></li>
+                <li><a href="profile.html">Mi Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <span id="user-name">Usuario</span>
+            <button id="logout-btn">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="purchases-section">
+            <h2>Mis Compras</h2>
+            
+            <div class="purchases-filters">
+                <div class="form-group">
+                    <label for="purchase-filter">Filtrar por:</label>
+                    <select id="purchase-filter">
+                        <option value="all">Todas las compras</option>
+                        <option value="upcoming">Próximos viajes</option>
+                        <option value="past">Viajes pasados</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="purchase-sort">Ordenar por:</label>
+                    <select id="purchase-sort">
+                        <option value="date-desc">Fecha (más reciente)</option>
+                        <option value="date-asc">Fecha (más antigua)</option>
+                        <option value="price-asc">Precio (menor a mayor)</option>
+                        <option value="price-desc">Precio (mayor a menor)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="purchases-container" class="purchases-grid">
+                <!-- Las compras se cargarán aquí dinámicamente -->
+                <p class="empty-message">No tienes compras realizadas.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AeroReserva</h3>
+                <p>Tu mejor opción para viajar por Colombia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="search-flights.html">Buscar Vuelos</a></li>
+                    <li><a href="reservations.html">Mis Reservas</a></li>
+                    <li><a href="purchases.html">Mis Compras</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@aeroreserva.com</p>
+                <p>Teléfono: +57 1 234 5678</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AeroReserva. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para detalles de compra -->
+    <div id="purchase-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Detalles de la Compra</h3>
+            <div id="purchase-details-content" class="modal-details">
+                <!-- Detalles de la compra -->
+            </div>
+            <div class="form-actions">
+                <button id="download-ticket-btn" class="btn primary-btn">Descargar Billete</button>
+                <button id="close-details-btn" class="btn secondary-btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="common.js"></script>
+    <script src="purchases.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
